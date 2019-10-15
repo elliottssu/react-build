@@ -1,4 +1,6 @@
 import React from 'react';
+import { Row, Col } from 'antd';
+
 import './index.less';
 
 export default class Home extends React.Component {
@@ -9,7 +11,10 @@ export default class Home extends React.Component {
 
     render() {
         return (
-            <div>首页</div>
+            <Row>
+                <Col span={12}>col-12</Col>
+                <Col span={12}>col-12</Col>
+            </Row>
         );
     }
 }
