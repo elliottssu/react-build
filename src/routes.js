@@ -1,11 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Loadable from 'react-loadable';
+import Loadable from 'react-dynamic-loadable';
 import Loading from './components/Loading';
 import App from './containers/App';
 
-const delay = 250;
-const timeout = 10000;
 
 // 路由配置
 const routeMap = [
@@ -44,12 +42,8 @@ export default (
                 exact={item.exact}
                 component={
                   Loadable({
-                    loader: () => {
-                      return import(`${item.component}`);
-                    },
-                    loading: Loading,
-                    delay,
-                    timeout
+                    component: () => import(`${item.component}`),
+                    LoadingComponent: () => <Loading />,
                   })
                 }
               />
