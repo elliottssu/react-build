@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.less';
 
-export default class Home extends React.Component {
+export default class Permission extends React.Component {
     constructor() {
         super();
         this.state = {};
@@ -9,7 +9,7 @@ export default class Home extends React.Component {
 
     render() {
         return (
-            <div>首页</div>
+            <div>权限管理</div>
         );
     }
 }

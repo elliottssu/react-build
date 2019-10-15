@@ -4,27 +4,26 @@ import Loadable from 'react-dynamic-loadable';
 import Loading from './components/Loading';
 import App from './containers/App';
 
+import Main from './containers/Main';
+import Login from './containers/Login';
 
-// 路由配置
+
+
+// 路由配置一级
 const routeMap = [
   {
-    path: '/home',
-    component: './containers/Home',
+    path: '/',
+    component: Main,
     exact: true
   },
   {
     path: '/login',
-    component: './containers/Login',
-    exact: true
-  },
-  {
-    path: '/',
-    component: './containers/Home',
+    component: Login,
     exact: true
   },
   {
     path: undefined,
-    component: './containers/Home',
+    component: Main,
     exact: false
   },
 ];
@@ -42,7 +41,7 @@ export default (
                 exact={item.exact}
                 component={
                   Loadable({
-                    component: () => import(`${item.component}`),
+                    component: () => item.component,
                     LoadingComponent: () => <Loading />,
                   })
                 }
