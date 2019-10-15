@@ -6,6 +6,7 @@ import { action, observable } from 'mobx';
 
 class CommonStore {
   @observable paramsList = {}
+  // @observable paramsList = {}
 
   @action setParams(params) {
     this.paramsList = params;

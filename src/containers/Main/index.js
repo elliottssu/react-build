@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon, Button } from 'antd';
 
 import Home from '../Home';
 import Analysis from '../Analysis';
@@ -96,12 +96,16 @@ export default class Main extends React.Component {
                     </Menu>
                 </Sider>
                 <Layout>
-                    <Header style={{ background: '#fff', padding: 0 }}>
+                    <Header style={{ background: '#fff', padding: '0px 20px 0 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <Icon
                             className="trigger"
                             type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
                             onClick={this.toggle}
                         />
+                        <Link to='/login'>
+                            <Button>登录</Button>
+                        </Link>
+
                     </Header>
                     <Content
                         style={{
