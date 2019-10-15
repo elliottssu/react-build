@@ -1,0 +1,147 @@
+
+.container-main {
+    padding-right: 5px;
+    &:last-child {
+        padding-right: 0;
+    }
+}
+.card-wrapper {
+    margin-top: 25px;
+    min-height: 545px;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    top: 0px;
+    transition: height 0.3s ease-in-out 0s;
+    height: 550px;
+    
+}
+.card-wrapper[aria-roledescription="totalGrossSales"] {
+    background-color: rgb(91, 195, 76);
+}
+.card-wrapper[aria-roledescription="totalGrossSales"] {
+    background-color: rgb(91, 195, 76);
+}
+
+.card-item {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px -1px 3px 0px;
+    display: flex;
+    color: rgb(255, 255, 255);
+    font-size: 0.75rem;
+    font-weight: bold;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    min-height: 0px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding: 0px 10px;
+    margin: 0;
+    min-height: 0px;
+    border-radius: 0px;
+    transition: height 0.3s ease-in-out 0s, min-height 0.3s ease-in-out 0s;
+}
+.card-item[aria-roledescription="ppcSales"] {
+    background-color: rgb(134, 183, 255);
+    color: rgb(255, 255, 255);
+    // height: 0%;
+    height: calc(25%);
+}
+.card-item[aria-roledescription="totalTaxAmount"] {
+    background-color: rgb(189, 204, 208);
+    color: rgb(59, 69, 76);
+    // height: 0%;
+    height: calc(10%);
+}
+.card-item[aria-roledescription="netOverallShippingRevenue"] {
+    background-color: rgb(105, 208, 90);
+    color: rgb(255, 255, 255);
+    // height: 0%;
+    height: calc(25%);
+}
+.card-item[aria-roledescription="netOrganicSales"] {
+    background-color: rgb(91, 195, 76);
+    color: rgb(255, 255, 255);
+    // height: 0%;
+    height: calc(25%);
+}
+
+
+.card-item[aria-roledescription="adSpend"] {
+    background-color: rgb(240, 166, 41);
+    color: rgb(255, 255, 255);
+    // height: 0%;
+    height: calc(10%);
+}
+.card-item[aria-roledescription="totalPromoCost"] {
+    background-color: rgb(253, 178, 52);
+    color: rgb(255, 255, 255);
+    // height: 0%;
+    height: calc(10%);
+}
+.card-item[aria-roledescription="totalReturnCost"] {
+    background-color: rgb(228, 63, 41);
+    color: rgb(255, 255, 255);
+    // height: 0%;
+    height: calc(10%);
+}
+.card-item[aria-roledescription="fbaShippingFees"] {
+    background-color: rgb(214, 226, 229);
+    color: rgb(59, 69, 76);
+    // height: 0%;
+    height: calc(10%);
+}
+.card-item[aria-roledescription="ownCostsTotal"] {
+    background-color: rgb(212, 132, 40);
+    color: rgb(255, 255, 255);
+    // height: 0%;
+    height: calc(10%);
+}
+.card-item[aria-roledescription="amzCommission"] {
+    background-color: rgb(224, 138, 42);
+    color: rgb(255, 255, 255);
+    // height: 0%;
+    height: calc(10%);
+}
+.card-item[aria-roledescription="fbaStorageFees"] {
+    background-color: rgb(228, 145, 41);
+    color: rgb(255, 255, 255);
+    // height: 0%;
+    height: calc(10%);
+}
+.card-item[aria-roledescription="fbaServiceFees"] {
+    background-color: rgb(228, 145, 41);
+    color: rgb(255, 255, 255);
+    // height: 0%;
+    height: calc(10%);
+}
+.card-item[aria-roledescription="otherAmazonFees"] {
+    background-color: rgb(224, 138, 42);
+    color: rgb(255, 255, 255);
+    // height: 0%;
+    height: calc(10%);
+}
+
+.card-item[aria-roledescription="netProfitMargin"] {
+    background-color: rgb(177, 116, 227);
+    color: rgb(255, 255, 255);
+    // height: 0%;
+    height: calc(100%);
+}
+
+.container-title {
+    color: rgb(110, 124, 136);
+    font-size: 14px;
+    text-align: center;
+    .name {
+        border-bottom: 1px dotted rgb(204, 213, 222);;
+    }
+    .amount {
+        color: rgb(31, 41, 49);
+        font-size: 24px;
+    }
+    .unit {
+        color: rgb(167, 180, 193);
+        margin-right: 5px;
+    }
+}

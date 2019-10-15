@@ -109,10 +109,11 @@ export default class Main extends React.Component {
                     </Header>
                     <Content
                         style={{
-                            margin: '24px 16px',
+                            margin: '15px 15px 0',
                             padding: 24,
                             background: '#fff',
                             minHeight: 280,
+                            overflow: 'auto'
                         }}
                     >
                         <Switch>
