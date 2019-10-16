@@ -75,7 +75,6 @@ export default class Main extends React.Component {
         ]
         const { pathname } = this.props.location;
 
-
         return (
             <Layout className="Main">
                 <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
@@ -84,7 +83,7 @@ export default class Main extends React.Component {
                         {
                             menuList.map((item, index) => {
                                 return (
-                                    <Menu.Item key={index} className={pathname === item.url ? 'ant-menu-item-selected' : ''}>
+                                    <Menu.Item key={index} className={pathname === item.url || (pathname === '/' && item.url === '/home') ? 'ant-menu-item-selected' : ''}>
                                         <Link to={item.url}>
                                             <Icon type={item.icon} />
                                             <span>{item.name}</span>

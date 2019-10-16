@@ -1,132 +1,197 @@
-
 .container-main {
     padding-right: 5px;
     &:last-child {
         padding-right: 0;
     }
-}
-.card-wrapper {
-    margin-top: 25px;
-    min-height: 545px;
-    position: relative;
-    border-radius: 4px;
-    overflow: hidden;
-    top: 0px;
-    transition: height 0.3s ease-in-out 0s;
-    height: 550px;
+    .card-wrapper {
+        margin-top: 25px;
+        min-height: 545px;
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        top: 0px;
+        transition: height 0.3s ease-in-out 0s;
+        height: 550px;
+        
+    }
+    &.contanier-overlay, &.contanier-overlay .card-item {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: 10;
+        }
+    }
+    &[aria-roledescription="totalGrossSales"] {
+        .card-wrapper {
+            background-color: rgb(91, 195, 76);
+        }
+        &.contanier-overlay, &:hover {
+            // 左边
+            [aria-roledescription="ppcSales"]{
+                height: calc(25%)!important;
+            }
+            [aria-roledescription="totalTaxAmount"]{
+                height: calc(10%)!important;
+            }
+            [aria-roledescription="netOverallShippingRevenue"]{
+                height: calc(25%)!important;
+            }
+            [aria-roledescription="netOrganicSales"]{
+                height: calc(25%)!important;
+            }
+        }
+    }
+    &[aria-roledescription="totalGrossCosts"] {
+        &.contanier-overlay, &:hover {
+            // 中间
+            [aria-roledescription="totalTaxAmount"]{
+                height: calc(10%)!important;
+            }
+            [aria-roledescription="adSpend"] {
+                height: calc(10%)!important;
+            }
+            [aria-roledescription="totalPromoCost"] {
+                height: calc(10%)!important;
+            }
+            [aria-roledescription="totalReturnCost"] {
+                height: calc(10%)!important;
+            }
+            [aria-roledescription="fbaShippingFees"] {
+                height: calc(10%)!important;
+            }
+            [aria-roledescription="ownCostsTotal"] {
+                height: calc(10%)!important;
+            }
+            [aria-roledescription="amzCommission"] {
+                height: calc(10%)!important;
+            }
+            [aria-roledescription="fbaStorageFees"] {
+                height: calc(10%)!important;
+            }
+            [aria-roledescription="fbaServiceFees"] {
+                height: calc(10%)!important;
+            }
+            [aria-roledescription="otherAmazonFees"] {
+                height: calc(10%)!important;
+            }
+        }
+    }
+    &[aria-roledescription="netProfit"] {
+        &.contanier-overlay, &:hover {
+            // 右边
+            [aria-roledescription="netProfitMargin"] {
+                height: calc(100%)!important;
+                top: 0
+            }
+        }
+    }
+    .card-item{
+        box-shadow: rgba(0, 0, 0, 0.2) 0px -1px 3px 0px;
+        display: flex;
+        color: rgb(255, 255, 255);
+        font-size: 0.75rem;
+        font-weight: bold;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        min-height: 0px;
+        position: relative;
+        z-index: 20;
+        overflow: hidden;
+        padding: 0px 10px;
+        margin: 0;
+        min-height: 0px;
+        border-radius: 0px;
+        transition: height 0.3s ease-in-out 0s, min-height 0.3s ease-in-out 0s;
+        font-weight: normal;
+        cursor: pointer;
+        &.pointer-disabled {
+            pointer-events: none;
+        }
+        &:hover :after {
+            content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADcElEQVRYR8WXT+hVRRTHP9+lZBSECv0Rw7AWgopkIBhabkKyVYEhoiGSQopgibooQUUrQwuUFqYhRtRCEnGlBLVQUwpLEzFMMINUhIQKSfjKkZnHvPvufe/+VPTA5XFnzpz5zpnv/Z7zxH023ef9aQ3A9jhgcuW5CPwA/Aj8ApyUdGkohxoIwPZIYD2wsGXgDZLWtPTtnwHbs4EvgWGVgDeAn4EA93jNZj8Br0n6bRCQxgzYPgS8UAQ4COwFTkTaJf0fc7afACal573KhkslfdIPRC0A22eBp4qFyyVtGXQa268CH1WyMkFSZKvWegDY/hh4q/AeJykAtTbbnwEL0oIrkka0AmD7JeBA4fy8pO9b71w42v4GCA6FfSjp7bo4XRmw/R0wLTnukFTLfNtjgG+B85Jm1AW2/RAQn+kDaX6epN1V3w4A2+PTtxw+hyVNbTq57SDbuzEvqR+RXwf2pDh7JM3tB2AO8EVyeFPSp3cKINbbPgc8CZySFIfssjIDG4BVaXaKpGN3CcA+4OUU6xFJV8u4JYD4zl8EQmSGSYrfW5bufH5+jcznKwDWluOSurTA9jogK+NMSaEvHSsBXAMeBI5LerZ0sh1kerQpI5XxLZKWF+Dj9JGFsBWSNjcBOA08A/whKdStY7aD8dNbAlggaVcBYDGwLb13zcVYmYHPgXnJcbSkC3eJAzuAN1KsHm6VAJYBWW5fkZTT1oOj7WeY+HMEeC5x62FJ/zRdQRSeTJC1VTJVrqStDowGfk1idELSxOppygxEaf2rcIhy+nXdNaSi8xVwWVKsqzXbcffBgbBVkjY2AkjpisZjdXLqIWMlCyFUoZgdwlXmZwH709j5ILik630BJBDRXkV9D9spKROo6aBNp3cx0cP+PFdXjqMPKMtvkDEKyd9tENgONQ1VzRYFK6S41poakugHoi/IFsxdJCnXip5gtsemZiSX4NJnpaT36xD0q2RPJwWLbjjb79H5pn7wKDAKmAAEu+MZXviGej5WvC+RtH0gB6oOtlcAH7RJf/L5E9gaJ7b9DrCpWNvTIw5sy2Ox7WhSopbn/wVVPFG44n9B8GWTpP+yg+1SimO46zpaASh3sx0FKwMJ3TgFnJH0b1OWbFc51RG6IQMYwlV0uVavI3dS9wxAusos4fc+A0PSgdtN8+2suwluS0sw4Gk5YQAAAABJRU5ErkJggg==');
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            display: block;
+            width: 5px;
+            color: rgb(255, 255, 255);
+            font-size: 30px;
+            opacity: 0.1;
+            transform: translate(-50%, -50%);
+        }
+    }
+    // 左边
+    [aria-roledescription="ppcSales"] {
+        background-color: rgb(134, 183, 255);
+        color: rgb(255, 255, 255);
+    }
+    [aria-roledescription="totalTaxAmount"] {
+        background-color: rgb(189, 204, 208);
+        color: rgb(59, 69, 76);
+    }
+    [aria-roledescription="netOverallShippingRevenue"] {
+        background-color: rgb(105, 208, 90);
+        color: rgb(255, 255, 255);
+    }
+    [aria-roledescription="netOrganicSales"] {
+        background-color: rgb(91, 195, 76);
+        color: rgb(255, 255, 255);
+    }
     
-}
-.card-wrapper[aria-roledescription="totalGrossSales"] {
-    background-color: rgb(91, 195, 76);
-}
-.card-wrapper[aria-roledescription="totalGrossSales"] {
-    background-color: rgb(91, 195, 76);
-}
-
-.card-item {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px -1px 3px 0px;
-    display: flex;
-    color: rgb(255, 255, 255);
-    font-size: 0.75rem;
-    font-weight: bold;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    min-height: 0px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    padding: 0px 10px;
-    margin: 0;
-    min-height: 0px;
-    border-radius: 0px;
-    transition: height 0.3s ease-in-out 0s, min-height 0.3s ease-in-out 0s;
-}
-.card-item[aria-roledescription="ppcSales"] {
-    background-color: rgb(134, 183, 255);
-    color: rgb(255, 255, 255);
-    // height: 0%;
-    height: calc(25%);
-}
-.card-item[aria-roledescription="totalTaxAmount"] {
-    background-color: rgb(189, 204, 208);
-    color: rgb(59, 69, 76);
-    // height: 0%;
-    height: calc(10%);
-}
-.card-item[aria-roledescription="netOverallShippingRevenue"] {
-    background-color: rgb(105, 208, 90);
-    color: rgb(255, 255, 255);
-    // height: 0%;
-    height: calc(25%);
-}
-.card-item[aria-roledescription="netOrganicSales"] {
-    background-color: rgb(91, 195, 76);
-    color: rgb(255, 255, 255);
-    // height: 0%;
-    height: calc(25%);
-}
-
-
-.card-item[aria-roledescription="adSpend"] {
-    background-color: rgb(240, 166, 41);
-    color: rgb(255, 255, 255);
-    // height: 0%;
-    height: calc(10%);
-}
-.card-item[aria-roledescription="totalPromoCost"] {
-    background-color: rgb(253, 178, 52);
-    color: rgb(255, 255, 255);
-    // height: 0%;
-    height: calc(10%);
-}
-.card-item[aria-roledescription="totalReturnCost"] {
-    background-color: rgb(228, 63, 41);
-    color: rgb(255, 255, 255);
-    // height: 0%;
-    height: calc(10%);
-}
-.card-item[aria-roledescription="fbaShippingFees"] {
-    background-color: rgb(214, 226, 229);
-    color: rgb(59, 69, 76);
-    // height: 0%;
-    height: calc(10%);
-}
-.card-item[aria-roledescription="ownCostsTotal"] {
-    background-color: rgb(212, 132, 40);
-    color: rgb(255, 255, 255);
-    // height: 0%;
-    height: calc(10%);
-}
-.card-item[aria-roledescription="amzCommission"] {
-    background-color: rgb(224, 138, 42);
-    color: rgb(255, 255, 255);
-    // height: 0%;
-    height: calc(10%);
-}
-.card-item[aria-roledescription="fbaStorageFees"] {
-    background-color: rgb(228, 145, 41);
-    color: rgb(255, 255, 255);
-    // height: 0%;
-    height: calc(10%);
-}
-.card-item[aria-roledescription="fbaServiceFees"] {
-    background-color: rgb(228, 145, 41);
-    color: rgb(255, 255, 255);
-    // height: 0%;
-    height: calc(10%);
-}
-.card-item[aria-roledescription="otherAmazonFees"] {
-    background-color: rgb(224, 138, 42);
-    color: rgb(255, 255, 255);
-    // height: 0%;
-    height: calc(10%);
-}
-
-.card-item[aria-roledescription="netProfitMargin"] {
-    background-color: rgb(177, 116, 227);
-    color: rgb(255, 255, 255);
-    // height: 0%;
-    height: calc(100%);
+    // 中间
+    [aria-roledescription="adSpend"] {
+        background-color: rgb(240, 166, 41);
+        color: rgb(255, 255, 255);
+    }
+    [aria-roledescription="totalPromoCost"] {
+        background-color: rgb(253, 178, 52);
+        color: rgb(255, 255, 255);
+    }
+    [aria-roledescription="totalReturnCost"] {
+        background-color: rgb(228, 63, 41);
+        color: rgb(255, 255, 255);
+        height: 0%;
+    }
+    [aria-roledescription="fbaShippingFees"] {
+        background-color: rgb(214, 226, 229);
+        color: rgb(59, 69, 76);
+    }
+    [aria-roledescription="ownCostsTotal"] {
+        background-color: rgb(212, 132, 40);
+        color: rgb(255, 255, 255);
+    }
+    [aria-roledescription="amzCommission"] {
+        background-color: rgb(224, 138, 42);
+        color: rgb(255, 255, 255);
+    }
+    [aria-roledescription="fbaStorageFees"] {
+        background-color: rgb(228, 145, 41);
+        color: rgb(255, 255, 255);
+    }
+    [aria-roledescription="fbaServiceFees"] {
+        background-color: rgb(228, 145, 41);
+        color: rgb(255, 255, 255);
+    }
+    [aria-roledescription="otherAmazonFees"] {
+        background-color: rgb(224, 138, 42);
+        color: rgb(255, 255, 255);
+    }
+    
+    // 右边
+    [aria-roledescription="netProfitMargin"] {
+        transition: top 0.3s ease-in-out 0s, height 0.3s ease-in-out 0s;
+        background-color: rgb(177, 116, 227);
+        color: rgb(255, 255, 255);
+        top: calc(228.9px)
+    }
+    
+   
 }
 
 .container-title {
@@ -144,4 +209,46 @@
         color: rgb(167, 180, 193);
         margin-right: 5px;
     }
+}
+.text-right {
+    text-align: right;
+}
+
+
+
+.card-overlay {
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 2rem;
+    position: absolute;
+    z-index: 10000;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px 0px;
+    height: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    background-color: inherit;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 4px;
+    display: none;
+    dl {
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+        margin: 0;
+        &:last-child {
+            border-bottom: none;
+        }
+        dd {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0 10px;
+        }
+        
+    }
+}
+
+.display-block {
+    display: block;
 }
