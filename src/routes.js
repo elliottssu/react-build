@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Loadable from 'react-dynamic-loadable';
-import Loading from './components/Loading';
 import App from './containers/App';
 
 import Main from './containers/Main';
@@ -41,8 +40,7 @@ export default (
                 exact={item.exact}
                 component={
                   Loadable({
-                    component: () => item.component,
-                    LoadingComponent: () => <Loading />,
+                    component: () => item.component
                   })
                 }
               />
