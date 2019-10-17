@@ -1,8 +1,12 @@
+/**
+ * 登录页面
+ */
 import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import './index.less';
 
 class Login extends React.Component {
+    // 登录
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {

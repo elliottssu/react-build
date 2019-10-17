@@ -1,3 +1,6 @@
+/**
+ * 二级菜单入口
+ */
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import { Layout, Menu, Icon, Button } from 'antd';
@@ -21,7 +24,7 @@ export default class Main extends React.Component {
         };
     }
 
-
+    // 隐藏折叠左侧菜单
     toggle = () => {
         this.setState({
             collapsed: !this.state.collapsed,

@@ -1,3 +1,6 @@
+/**
+ * 首页页面
+ */
 import React from 'react';
 import { Row, Col } from 'antd';
 import Fold from '../../components/Fold';

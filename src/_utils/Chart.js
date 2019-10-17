@@ -1,3 +1,6 @@
+/**
+ * Echarts公共方法
+ */
 class Chart {
 
     /**

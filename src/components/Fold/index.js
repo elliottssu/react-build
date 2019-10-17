@@ -1,5 +1,5 @@
 /**
- * 任务列表
+ * 折叠卡片组件
  */
 import React from 'react';
 import { inject, observer } from 'mobx-react';
@@ -16,11 +16,14 @@ class Fold extends React.Component {
   }
   
   componentDidMount() {
+    // 第一次加载，获取数据
     this.props.CommonStore.getSaleLit()
+
+    // 全局监听click事件，点击任何地方可以隐藏掉弹层
     document.addEventListener('click', this.hideItem);
   }
 
-  // 选择弹起
+  // 选择对应卡片的弹层
   selectItem = (e, index1, index2) => {
     this.hideItem()
     e.nativeEvent.stopImmediatePropagation();

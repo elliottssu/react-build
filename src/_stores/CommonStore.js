@@ -6,17 +6,24 @@ import { action, observable } from 'mobx';
 import dataProxy from '../dataProxy';
 
 class CommonStore {
-  @observable saleList = []
 
+  @observable saleList = [];  // 数据列表
+
+  /**
+   * 获取列表
+   */
   @action getSaleLit = (params) => {
+    // // 这里是为了演示调取接口的，有Promise和没有的区别在于，如果用Promise的话，在调用的时候拿需要getSaleList.then((data)=>{})，用法可以网上搜素
     // return new Promise((resolve, reject) => {
-    //   dataProxy.get('/api/futures/pc/market', { params }).then((result) => {
-    //     dataProxy.post('/api/futures/pc/market', params).then((result) => {
+    //   dataProxy.get('/api/pc/market', { params }).then((result) => {
+    //     dataProxy.post('/api/pc/market', params).then((result) => {
     //       resolve(result);
     //     }).catch((err) => {
     //       reject(err);
     //     });
     //   });
+
+    // 这里是为了演示获取数据之后的数据结构
     this.saleList = [
       {
         id: 'totalGrossSales',
@@ -164,14 +171,17 @@ class CommonStore {
     ]
   }
 
+  // 设置卡片遮罩
   @action setItem(index1, index2) {
     this.saleList[index1].data[index2].isShow = true
     this.saleList[index1].isOverlay = true
   }
+
+  // 取消卡片遮罩
   @action removeItem() {
-    this.saleList.forEach((item1, index1) => {
+    this.saleList.forEach((item1) => {
       item1.isOverlay = false
-      item1.data.forEach((item2, index2) => {
+      item1.data.forEach((item2) => {
         item2.isShow = false
       })
     })

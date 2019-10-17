@@ -1,3 +1,6 @@
+/**
+ * 数据分析页面
+ */
 import React from 'react';
 import { Row, Col } from 'antd';
 import ReactEcharts from 'echarts-for-react';

@@ -1,8 +1,12 @@
+/**
+ * 权限管理页面
+ */
+
 import React from 'react';
 import { Table, Divider, Tag } from 'antd';
 
-
 import './index.less';
+
 
 export default class Permission extends React.Component {
     constructor() {
