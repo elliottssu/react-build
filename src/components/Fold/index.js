@@ -14,7 +14,7 @@ class Fold extends React.Component {
     super(props);
     this.state = {};
   }
-  
+
   componentDidMount() {
     // 第一次加载，获取数据
     this.props.CommonStore.getSaleLit()
@@ -43,11 +43,13 @@ class Fold extends React.Component {
           saleList.map((item1, index1) => {
             return (
               <Col aria-roledescription={item1.id} className={`container-main ${item1.isOverlay ? 'contanier-overlay' : ''}`} span={8} key={index1}>
+                {/* 总计 */}
                 <div className="container-title">
                   <span className="name">{item1.name}</span>
                   <div className="amount"><span className="unit">$</span><span>{item1.amount}</span></div>
                 </div>
                 <div className={`card-wrapper`}>
+                  {/* 每个卡片 */}
                   {item1.data.map((item2, index2) => {
                     return (
                       <dl
@@ -63,6 +65,7 @@ class Fold extends React.Component {
                           <div>{item2.rate}%</div>
                           {item2.amount ? (<div>${item2.amount}</div>) : null}
                         </dd>
+                        {/* 弹层 */}
                         <dd className={item2.isShow ? 'card-overlay display-block' : 'card-overlay'}>
                           {
                             item2.data && Array.isArray(item2.data) ? (

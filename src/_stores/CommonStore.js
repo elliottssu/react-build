@@ -28,7 +28,7 @@ class CommonStore {
       {
         id: 'totalGrossSales',
         name: 'Sales + Shipping adj. for refunds',
-        amount: '8,638.04',
+        amount: '123,456.78',
         data: [
           {
             id: 'ppcSales',
@@ -52,7 +52,7 @@ class CommonStore {
             id: 'totalTaxAmount',
             name: 'Sales Tax / VAT',
             rate: '6',
-            amount: '595.37'
+            amount: '555.55'
           },
           {
             id: 'netOverallShippingRevenue',
@@ -77,20 +77,20 @@ class CommonStore {
             id: 'netOrganicSales',
             name: 'Organic sales',
             rate: '94',
-            amount: '8,042.67'
+            amount: '6,666.66'
           },
         ]
       },
       {
         id: 'totalGrossCosts',
         name: 'Total Costs',
-        amount: '-3,797.60',
+        amount: '6,666.66',
         data: [
           {
             id: 'totalTaxAmount',
             name: 'Sales Tax / VAT',
             rate: '6',
-            amount: '-414.10'
+            amount: '314.10'
           },
           {
             id: 'adSpend',
@@ -121,19 +121,19 @@ class CommonStore {
             id: 'fbaShippingFees',
             name: 'FBA Shipping Fees',
             rate: '-14',
-            amount: '-889.42'
+            amount: '999.99'
           },
           {
             id: 'ownCostsTotal',
             name: 'Total Cost of Goods',
             rate: '-7',
-            amount: '-460.04'
+            amount: '444.44'
           },
           {
             id: 'amzCommission',
             name: 'AMZ Referral Fees',
             rate: '-15',
-            amount: '-954.15'
+            amount: '333.33'
           },
           {
             id: 'fbaStorageFees',
@@ -158,12 +158,12 @@ class CommonStore {
       {
         id: 'netProfit',
         name: 'Operating Profit',
-        amount: '4,840.44',
+        amount: '8,888.88',
         data: [
           {
             id: 'netProfitMargin',
             name: 'Profit Margin',
-            rate: '61',
+            rate: '68',
             amount: ''
           }
         ]

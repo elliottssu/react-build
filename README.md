@@ -7,6 +7,8 @@ React+Mobx框架搭建的后台管理系统，以及对应新手需要掌握的�
 
 [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
 
+![](https://upload-images.jianshu.io/upload_images/3502567-3ce61620e876251f.png)
+
 ### 一、前置知识点
 1. 《React中文文档》[https://react.docschina.org](https://react.docschina.org/docs/hello-world.html)
 2. 《React菜鸟教程》[https://www.runoob.com/react/react-tutorial.html](https://www.runoob.com/react/react-tutorial.html) 
@@ -27,8 +29,6 @@ React+Mobx框架搭建的后台管理系统，以及对应新手需要掌握的�
 9. [Ant Design组件之50多种内置组件](https://ant.design/components/button-cn/)
 10. [额外的第三方精选组件](https://ant.design/docs/react/recommendation-cn)
 11. [书写less样式](http://lesscss.cn/)
-
- ![image.png](https://upload-images.jianshu.io/upload_images/3502567-006aa675fbcc031a.png)
 
 ### 三、项目启动
 
@@ -98,12 +98,12 @@ React相比Angular的优点：
 
 - 简单易上手，Angular是一个全面的框架，学习曲线非常高。
 - 加载更快，Angular因为引入的依赖太多，加载速度会慢一点。
-- 组件灵活，react很多组件是社区第三方贡献，而Angular除了业务组件外，其他很多都内置官方库如路由、动画等等
+- 组件灵活，react很多组件是社区第三方贡献，而Angular除了业务组件外，其他很多都内置官方库如路由、动画等等。
 
 推荐学习路线：
 
-- 《React菜鸟教程》是一个面向新手非常友好的教程，看完基本可以上手了，不建议看官方文档，官方文档中文读起来生涩，不好懂
-- 《React.js 小书》是一个进阶的教程，这个是从原理的角度解析React原理
+- 《React菜鸟教程》是一个面向新手非常友好的教程，看完基本可以上手了，不建议看官方文档，官方文档中文读起来生涩，不好懂。
+- 《React.js 小书》是一个进阶的教程，这个是从原理的角度解析React原理。
 
 #### 2. 脚手架：Create React App
 
@@ -147,7 +147,7 @@ Ant Design内置组件基本涵盖能够想到的大部分组件，如果发现�
 
 #### 11. 书写less样式
 
-本项目中使用的预处理器less来代替css，这个用的比较多的就是变量和嵌套，可以看看官方文档了解一下
+本项目中使用的预处理器less来代替css，这个用的比较多的就是变量和嵌套，可以看看官方文档了解一下。
 
 ### 六、Q & A
 
@@ -166,6 +166,10 @@ Ant Design内置组件基本涵盖能够想到的大部分组件，如果发现�
 - 深刻贯彻React组件化思想，万物皆组件，就是能独立的模块全部独立。
 - 了解react写法，这个和之前的写法不一致，看文档熟悉掌握。
 - 注意组件和页面的区别，对应的代码放到对应的文件夹中。
+
+### 4. 遇到困难？
+
+本项目涉及到的技术点均已罗列出来，如果遇到问题可以Google 技术点+问题查找结局方案，或者找我协助解决。
 
 ### 七、结束
 
